@@ -8,54 +8,59 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.keyboardType,
-    this.suffixIcon,
     this.controller,
     required this.onSaved,
-    required this.obscureText,
-    required this.textInputAction, required this.focusNode,
-
+    required this.textInputAction,
+    this.maxLines=1,
   });
+  final int? maxLines;
   final String hintText;
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
-  final Widget? suffixIcon;
   final TextEditingController? controller;
   final Function(String?) onSaved;
-  final bool obscureText;
-  final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      focusNode:focusNode ,
-      autofocus: false,
-      validator: (value) {
-        if(value==null || value.isEmpty){
-          return "هذا الحقل مطوب";
-        }
-        return null;
-      },
-      scrollPhysics: const BouncingScrollPhysics(),
-      style: TextStyles.semiBold16.copyWith(color: AppColor.grayscale950),
-      keyboardType: keyboardType,
-      textInputAction: textInputAction,
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.end,
-      controller: controller,
-      onSaved:onSaved ,
-      obscureText:obscureText ,
-      decoration: InputDecoration(
-        prefixIcon: suffixIcon,
-        fillColor: const Color(0xffF9FAFA),
-        filled: true,
-        hintText: hintText,
-        hintStyle: TextStyles.bold13.copyWith(color: AppColor.grayscale400),
-        border: buildOutlineInputBorder(),
-        enabledBorder: buildOutlineInputBorder(),
-        disabledBorder: buildOutlineInputBorder(),
-        enabled: true,
-        focusedBorder: buildOutlineInputBorder(),
-        errorBorder:buildOutlineInputBorder(),
-        focusedErrorBorder: buildOutlineInputBorder(),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [
+           Colors.black.withValues(alpha: 0.7),
+           Color(0xffF9FAFA),
+        ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight
+        ),
+      ),
+      child: TextFormField(
+        autofocus: false,
+        validator: (value) {
+          if(value==null || value.isEmpty){
+            return "Please enter some text";
+          }
+          return null;
+        },
+        maxLines: maxLines,
+        scrollPhysics: const BouncingScrollPhysics(),
+        style: TextStyles.semiBold16.copyWith(color: AppColor.grayscale950),
+        keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.center,
+        controller: controller,
+        onSaved:onSaved ,
+        decoration: InputDecoration(
+          fillColor: Colors.transparent,
+          filled: true,
+          hintText: hintText,
+          hintStyle: TextStyles.bold13.copyWith(color: AppColor.green1500),
+          border: buildOutlineInputBorder(),
+          enabledBorder: buildOutlineInputBorder(),
+          disabledBorder: buildOutlineInputBorder(),
+          enabled: true,
+          focusedBorder: buildOutlineInputBorder(),
+          errorBorder:buildOutlineInputBorder(),
+          focusedErrorBorder: buildOutlineInputBorder(),
+        ),
       ),
     );
   }

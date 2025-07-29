@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   firebase_core: ^4.0.0
   flutter_bloc: ^9.1.1
+  image_picker: ^1.1.2
+  skeletonizer: ^1.4.3
 
 dev_dependencies:
   flutter_test:
