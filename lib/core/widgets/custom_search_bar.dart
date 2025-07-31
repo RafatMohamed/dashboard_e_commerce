@@ -31,13 +31,13 @@ class CustomSearchBar extends StatelessWidget {
         controller: TextEditingController(),
         onSaved:(newValue) {} ,
         decoration: InputDecoration(
-          prefixIcon: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: const Icon(Icons.filter_list_outlined),
+          prefixIcon: const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(Icons.filter_list_outlined),
           ),
-          suffixIcon: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: const Icon(Icons.search_outlined),
+          suffixIcon: const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(Icons.search_outlined),
           ),
           border: buildOutlineInputBorder(),
           enabledBorder: buildOutlineInputBorder(),

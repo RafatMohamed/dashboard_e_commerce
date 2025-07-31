@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 import '../utils/app_text_styles.dart';
 import 'custom_arrow_back_w.dart';
-import 'custom_notif_w.dart';
 
 AppBar customAppBar({required BuildContext context, required String title}) {
   return AppBar(

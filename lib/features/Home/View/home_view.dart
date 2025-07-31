@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_text_styles.dart';
-import '../../../core/widgets/custom_app_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -22,7 +21,7 @@ class HomeView extends StatelessWidget {
         title:
             Text("Dashboard E-Commerce Food",style: TextStyles.bold16.copyWith(color: AppColor.grayscale950),),
       ),
-      body: SafeArea(child: HomeViewBody(),),
+      body: const SafeArea(child: HomeViewBody(),),
     );
   }
 }

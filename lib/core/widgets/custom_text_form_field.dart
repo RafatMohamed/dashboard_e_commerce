@@ -25,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
            Colors.black.withValues(alpha: 0.7),
-           Color(0xffF9FAFA),
+           const Color(0xffF9FAFA),
         ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight

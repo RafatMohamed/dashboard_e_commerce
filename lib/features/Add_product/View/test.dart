@@ -1,14 +1,14 @@
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TestAddProductView extends StatelessWidget {
-  const TestAddProductView({Key? key, required this.name, required this.price, required this.quantity, required this.description, required this.category, required this.image, required this.code,required this.isFeatured}) : super(key: key);
+  const TestAddProductView({super.key, required this.name, required this.price, required this.quantity, required this.description, required this.category, required this.image, required this.code,required this.isFeatured, required  this.imagePath});
   final String name ;
   final String price ;
   final String quantity ;
   final String code ;
   final String description ;
+  final String imagePath ;
   final String category ;
   final File image ;
   final bool isFeatured ;
@@ -28,6 +28,7 @@ class TestAddProductView extends StatelessWidget {
                  Text(description),
                  Text(code),
                  Text(category),
+                 Text(imagePath),
                  Text(isFeatured.toString()),
                 ClipOval(
                   child: Container(
